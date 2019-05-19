@@ -73,7 +73,7 @@ return (
                   error={errors.name}
                   id="name"
                   type="text"
-                  className={classnames("", {
+                  className={classnames({}, {
                     invalid: errors.name
                   })}
                 />
@@ -88,7 +88,7 @@ return (
                   error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {
+                  className={classnames({}, {
                     invalid: errors.email
                   })}
                 />
@@ -102,7 +102,7 @@ return (
                   error={errors.password}
                   id="password"
                   type="password"
-                  className={classnames("", {
+                  className={classnames({}, {
                     invalid: errors.password
                   })}
                 />
@@ -117,7 +117,7 @@ return (
                   error={errors.password2}
                   id="password2"
                   type="password"
-                  className={classnames("", {
+                  className={classnames({}, {
                     invalid: errors.password2
                   })}
                 />
