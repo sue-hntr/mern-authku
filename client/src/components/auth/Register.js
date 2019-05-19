@@ -37,6 +37,7 @@ onChange = e => {
   };
 onSubmit = e => {
     e.preventDefault();
+
 const newUser = {
       name: this.state.name,
       email: this.state.email,
@@ -73,7 +74,7 @@ return (
                   error={errors.name}
                   id="name"
                   type="text"
-                  className={classnames({}, {
+                  className={classnames("", {
                     invalid: errors.name
                   })}
                 />
@@ -149,7 +150,7 @@ return (
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({
