@@ -122,7 +122,7 @@ return (
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.string.isRequired
 };
 const mapStateToProps = state => ({
   auth: state.auth,
