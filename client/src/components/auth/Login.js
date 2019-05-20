@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import classnames from "classnames";
+// import classnames from "classnames";
 
 class Login extends Component {
   constructor() {
@@ -11,7 +11,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      errors: {}
+      // errors: {}
     };
   }
 
@@ -26,11 +26,11 @@ class Login extends Component {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard"); // push user to dashboard when they login
     }
-if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
-    }
+// if (nextProps.errors) {
+//       this.setState({
+//         errors: nextProps.errors
+//       });
+//     }
   }
 
 onChange = e => {
@@ -46,7 +46,7 @@ const userData = {
 
   };
 render() {
-    const { errors } = this.state;
+    // const { errors } = this.state;
 return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
@@ -68,35 +68,35 @@ return (
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
-                  error={errors.email}
+                  // error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
+                  // className={classnames("", {
+                  //   invalid: errors.email || errors.emailnotfound
+                  // })}
                 />
                 <label htmlFor="email">Email</label>
-                <span className="red-text">
+                {/* <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
-                </span>
+                </span> */}
               </div>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
-                  error={errors.password}
+                  // error={errors.password}
                   id="password"
                   type="password"
-                  className={classnames("", {
-                    invalid: errors.password || errors.passwordincorrect
-                  })}
+                  // className={classnames("", {
+                  //   invalid: errors.password || errors.passwordincorrect
+                  // })}
                 />
                 <label htmlFor="password">Password</label>
-                <span className="red-text">
+                {/* <span className="red-text">
                   {errors.password}
-                  {errors.passwordincorrect}
-                </span>
+                  {errors.passwordincorrect} */}
+                {/* </span> */}
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
@@ -122,11 +122,11 @@ return (
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.string.isRequired
+  // errors: PropTypes.string.isRequired
 };
 const mapStateToProps = state => ({
   auth: state.auth,
-  errors: state.errors
+  // errors: state.errors
 });
 export default connect(
   mapStateToProps,
