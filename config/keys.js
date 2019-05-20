@@ -3,6 +3,6 @@
 //put the mLAB stuff below
 
 module.exports = {
-    mongoURI: "mongodb://heroku_p42wv8z0:heroku_p42wv8z0@ds157946.mlab.com:57946/heroku_p42wv8z0",
+    mongoURI: "mongodb://heroku_hqz3hvj7:heroku_hqz3hvj7@ds149056.mlab.com:49056/heroku_hqz3hvj7",
     secretOrKey: "secret"
   };

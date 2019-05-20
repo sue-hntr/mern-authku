@@ -21,9 +21,9 @@ app.use(bodyParser.json());
 // const db = require("./config/keys").mongoURI;
 
 // MongoDB for Heroku Prod
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mern", { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mern", { useNewUrlParser: true })
 // MongoDB for local
-mongoose.connect("mongodb://localhost/mern", { useNewUrlParser: true })
+// mongoose.connect("mongodb://localhost/mern", { useNewUrlParser: true })
 .then(() => console.log("MongoDB successfully connected"))
 .catch( err => console.log(err));
 
@@ -46,15 +46,14 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-// //set static folder  
-//   app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+//set static folder  
+  app.use(express.static("client/build"));
 
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
-// }
-
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
 
